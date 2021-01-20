@@ -15,8 +15,12 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { VoteViewComponent } from './pages/vote-view/vote-view.component';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 registerLocaleData(de);
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
+  cors: {origin: true}
+} };
 
 @NgModule({
   declarations: [
@@ -29,6 +33,7 @@ registerLocaleData(de);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    SocketIoModule.forRoot(config),
     NgbModule,
     NzInputModule,
     NzGridModule,
