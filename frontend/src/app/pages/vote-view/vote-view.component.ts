@@ -24,8 +24,8 @@ export class VoteViewComponent implements OnInit {
   onVoteClick(points: number): void {
     this.currentlySelectedValue = points;
     this.votedAlready = true;
-    this.playerService.sendMessage('Finn');
-    
+    this.playerService.sendMessage('connection');
+
 
   }
 
