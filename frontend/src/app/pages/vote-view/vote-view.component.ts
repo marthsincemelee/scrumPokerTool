@@ -1,4 +1,4 @@
-import { PlayerService } from './../../services/player.service';
+import { PlayerService } from '../../services/player.service';
 import {Component, OnInit} from '@angular/core';
 
 @Component({
@@ -12,10 +12,11 @@ export class VoteViewComponent implements OnInit {
   votedAlready: boolean;
   currentlySelectedValue: number;
 
-  constructor(private playerService: PlayerService) {
-    this.pointOptions = [1, 2, 3, 5, 8, 13];
+  constructor(public playerService: PlayerService) {
     this.votedAlready = false;
     this.currentlySelectedValue = 0;
+
+
   }
 
   ngOnInit(): void {
@@ -24,9 +25,6 @@ export class VoteViewComponent implements OnInit {
   onVoteClick(points: number): void {
     this.currentlySelectedValue = points;
     this.votedAlready = true;
-    this.playerService.sendMessage('connection');
-
-
   }
 
 }
