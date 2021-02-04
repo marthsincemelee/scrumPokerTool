@@ -18,6 +18,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { VoteViewComponent } from './pages/vote-view/vote-view.component';
 import { SocketIoModule, SocketIoConfig } from '@hochdreih/ngx-socket-io-3';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { VoteSelectionComponent } from './pages/vote-selection/vote-selection.component';
 import { SetUsernameModalComponent } from './pages/set-username-modal/set-username-modal.component';
@@ -43,6 +44,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
     NgbModule,
     NzInputModule,
     NzCardModule,
+    NzLayoutModule,
     NzModalModule,
     NzGridModule,
     NzButtonModule,

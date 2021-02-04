@@ -1,7 +1,7 @@
 <div class="container">
 
-  <div nz-row>
-    <div nz-col nzSpan="6" *ngFor="let player of this.playerService.allPlayers">
+  <div nz-row [nzGutter]="[16, 24]">
+    <div nz-col nzSpan="6"  *ngFor="let player of this.playerService.allPlayers">
       <nz-card [nzTitle]="player.name" >
         <p>{{player.voteValue}}</p>
       </nz-card>
