@@ -1,0 +1,7 @@
+<div nz-row nzJustify="space-around" class="container-fluid">
+  <div nz-col nzSpan="3" *ngFor="let option of options">
+    <img [src]="option.picUrl" (click)="playerService.sendVote(option.value)" [alt]="option.value">
+  </div>
+</div>
+
+

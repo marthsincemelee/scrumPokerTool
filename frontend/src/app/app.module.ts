@@ -14,9 +14,11 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCardModule } from 'ng-zorro-antd/card';
 import { VoteViewComponent } from './pages/vote-view/vote-view.component';
 import { SocketIoModule, SocketIoConfig } from '@hochdreih/ngx-socket-io-3';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { VoteSelectionComponent } from './pages/vote-selection/vote-selection.component';
 registerLocaleData(de);
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
   cors: {origin: true}
@@ -27,6 +29,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
     AppComponent,
     LandingPageComponent,
     VoteViewComponent
+    VoteSelectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
     SocketIoModule.forRoot(config),
     NgbModule,
     NzInputModule,
+    NzCardModule,
     NzGridModule,
     NzButtonModule,
     NzFormModule
