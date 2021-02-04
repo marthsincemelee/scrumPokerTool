@@ -6,7 +6,7 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { de_DE } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import de from '@angular/common/locales/de';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -17,8 +17,10 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { VoteViewComponent } from './pages/vote-view/vote-view.component';
 import { SocketIoModule, SocketIoConfig } from '@hochdreih/ngx-socket-io-3';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { VoteSelectionComponent } from './pages/vote-selection/vote-selection.component';
+import { SetUsernameModalComponent } from './pages/set-username-modal/set-username-modal.component';
 registerLocaleData(de);
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
   cors: {origin: true}
@@ -28,8 +30,9 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
   declarations: [
     AppComponent,
     LandingPageComponent,
-    VoteViewComponent
+    VoteViewComponent,
     VoteSelectionComponent,
+    SetUsernameModalComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +43,11 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
     NgbModule,
     NzInputModule,
     NzCardModule,
+    NzModalModule,
     NzGridModule,
     NzButtonModule,
-    NzFormModule
+    NzFormModule,
+    ReactiveFormsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: de_DE }],
   bootstrap: [AppComponent]

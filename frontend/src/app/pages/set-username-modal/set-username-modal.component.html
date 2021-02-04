@@ -1,0 +1,9 @@
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Wählen Sie einen Nutzernamen" [nzClosable]="false" [nzCancelText]="null" (nzOnOk)="handleOk(this.usernameForm.value)">
+  <ng-container>
+    <form nz-form (ngSubmit)="handleOk(this.usernameForm.value)" [formGroup]="usernameForm">
+      <nz-form-item>
+        <input  formControlName="username" nz-input type="text" placeholder="Username">
+      </nz-form-item>
+    </form>
+  </ng-container>
+</nz-modal>
