@@ -8,3 +8,7 @@
 .container {
   margin-top: 10vh;
 }
+
+img{
+  max-width: 75%;
+}

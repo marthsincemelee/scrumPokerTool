@@ -10,11 +10,23 @@ export class PlayerService {
 
   username: string;
   allPlayers: Array<any>;
+  cardValueIsShown: boolean;
 
   constructor(private socket: Socket) {
     this.socket.on('allVotes', (allVotes) => {
       this.allPlayers = allVotes;
     });
+
+    this.socket.on('showCards', () => {
+      this.cardValueIsShown = true;
+    });
+
+    this.socket.on('hideCards', () => {
+      this.cardValueIsShown = false;
+    });
+
+
+    this.cardValueIsShown = false;
   }
 
   sendVote(value: number): void {
@@ -22,6 +34,10 @@ export class PlayerService {
       name: this.username,
       voteValue: value
     });
+  }
+
+  showCards(): void {
+    this.socket.emit('showCards');
   }
 
 

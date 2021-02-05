@@ -13,18 +13,10 @@ export class VoteViewComponent implements OnInit {
   currentlySelectedValue: number;
 
   constructor(public playerService: PlayerService) {
-    this.votedAlready = false;
-    this.currentlySelectedValue = 0;
-
-
   }
 
   ngOnInit(): void {
   }
 
-  onVoteClick(points: number): void {
-    this.currentlySelectedValue = points;
-    this.votedAlready = true;
-  }
 
 }

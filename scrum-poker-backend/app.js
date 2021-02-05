@@ -29,6 +29,16 @@ io.on('connection', (socket) => {
     socket.on('reset', () => {
         allVotes = [];
         refreshVotes();
+        allSockets.forEach(playerSocket => {
+           playerSocket.emit('hideCards');
+        });
+
+    });
+
+    socket.on('showCards', () => {
+       allSockets.forEach(playerSocket => {
+         playerSocket.emit('showCards');
+       });
     });
 
 
