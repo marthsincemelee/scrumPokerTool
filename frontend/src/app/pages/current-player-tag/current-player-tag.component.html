@@ -1,0 +1,4 @@
+<div>
+  <span>Bereits abgestimmt haben: </span>
+  <nz-tag *ngFor="let player of playerService.allPlayers" [nzColor]="'geekblue'">{{player.name}}</nz-tag>
+</div>

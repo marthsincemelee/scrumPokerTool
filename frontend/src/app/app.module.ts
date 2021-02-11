@@ -10,7 +10,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -19,9 +18,12 @@ import { VoteViewComponent } from './pages/vote-view/vote-view.component';
 import { SocketIoModule, SocketIoConfig } from '@hochdreih/ngx-socket-io-3';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { VoteSelectionComponent } from './pages/vote-selection/vote-selection.component';
 import { SetUsernameModalComponent } from './pages/set-username-modal/set-username-modal.component';
+import { CurrentPlayerTagComponent } from './pages/current-player-tag/current-player-tag.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 registerLocaleData(de);
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
   cors: {origin: true}
@@ -30,10 +32,10 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent,
     VoteViewComponent,
     VoteSelectionComponent,
-    SetUsernameModalComponent
+    SetUsernameModalComponent,
+    CurrentPlayerTagComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,9 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
     NgbModule,
     NzInputModule,
     NzCardModule,
+    NzIconModule,
     NzLayoutModule,
+    NzTagModule,
     NzModalModule,
     NzGridModule,
     NzButtonModule,
