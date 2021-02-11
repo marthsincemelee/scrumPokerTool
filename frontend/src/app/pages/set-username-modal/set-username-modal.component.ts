@@ -26,7 +26,7 @@ export class SetUsernameModalComponent implements OnInit {
     if (this.usernameForm.valid){
       this.playerService.username = value.username;
       this.isVisible = false;
-      this.playerService.sendVote(21);
+      this.playerService.sendVote(0);
     }
 
   }

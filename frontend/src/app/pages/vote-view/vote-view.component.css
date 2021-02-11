@@ -12,3 +12,8 @@
 img{
   max-width: 75%;
 }
+.control-panel {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-evenly;
+}

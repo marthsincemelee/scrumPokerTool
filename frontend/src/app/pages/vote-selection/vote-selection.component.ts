@@ -10,7 +10,6 @@ export class VoteSelectionComponent implements OnInit {
 
 
   options = [
-    {value: 0, picUrl: 'assets/img/0.png' },
     {value: 1, picUrl: 'assets/img/1.png' },
     {value: 2, picUrl: 'assets/img/2.png' },
     {value: 3, picUrl: 'assets/img/3.png' },
