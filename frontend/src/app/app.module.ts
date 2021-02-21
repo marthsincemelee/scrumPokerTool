@@ -24,6 +24,12 @@ import { VoteSelectionComponent } from './pages/vote-selection/vote-selection.co
 import { SetUsernameModalComponent } from './pages/set-username-modal/set-username-modal.component';
 import { CurrentPlayerTagComponent } from './pages/current-player-tag/current-player-tag.component';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { ResultComponent } from './pages/result/result.component';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
+
+
+
 registerLocaleData(de);
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
   cors: {origin: true}
@@ -35,7 +41,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
     VoteViewComponent,
     VoteSelectionComponent,
     SetUsernameModalComponent,
-    CurrentPlayerTagComponent
+    CurrentPlayerTagComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
@@ -46,8 +53,10 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
     NgbModule,
     NzInputModule,
     NzCardModule,
+    NzListModule,
     NzIconModule,
     NzLayoutModule,
+    NzStatisticModule,
     NzTagModule,
     NzModalModule,
     NzGridModule,

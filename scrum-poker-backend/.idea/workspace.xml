@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c277a55-18ec-4386-bacd-ca6ed05f6e55" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/result/result.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/result/result.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/result/result.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/result/result.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/set-username-modal/set-username-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/set-username-modal/set-username-modal.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/vote-selection/vote-selection.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/vote-selection/vote-selection.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/vote-selection/vote-selection.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/vote-selection/vote-selection.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/vote-view/vote-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/vote-view/vote-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/vote-view/vote-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/vote-view/vote-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/services/player.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/services/player.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +74,7 @@
       <workItem from="1612435151992" duration="7624000" />
       <workItem from="1612514780246" duration="3623000" />
       <workItem from="1613031145574" duration="5387000" />
+      <workItem from="1613920940899" duration="2251000" />
     </task>
     <servers />
   </component>
@@ -80,29 +89,30 @@
       <screen x="-1920" y="418" width="1920" height="1140" />
     </state>
     <state x="-1278" y="519" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.418.1920.1140/3840.418.1920.1080/0.0.2560.1400@-1920.418.1920.1140" timestamp="1611249834989" />
-    <state x="-952" y="619" key="FileChooserDialogImpl" timestamp="1611249830462">
-      <screen x="-1920" y="418" width="1920" height="1140" />
+    <state x="1291" y="247" key="FileChooserDialogImpl" timestamp="1613920957902">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-952" y="619" key="FileChooserDialogImpl/-1920.418.1920.1140/3840.418.1920.1080/0.0.2560.1400@-1920.418.1920.1140" timestamp="1611249830462" />
-    <state width="1238" height="391" key="GridCell.Tab.0.bottom" timestamp="1613042504243">
+    <state x="1291" y="247" key="FileChooserDialogImpl/0.0.2560.1400/3840.415.1920.1080@0.0.2560.1400" timestamp="1613920957902" />
+    <state width="1237" height="399" key="GridCell.Tab.0.bottom" timestamp="1613925842995">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1242" height="390" key="GridCell.Tab.0.bottom/-1920.418.1920.1140/3840.418.1920.1080/0.0.2560.1400@0.0.2560.1400" timestamp="1612530388069" />
-    <state width="1238" height="391" key="GridCell.Tab.0.bottom/0.0.2560.1400/3840.415.1920.1080@0.0.2560.1400" timestamp="1613042504243" />
-    <state width="1238" height="391" key="GridCell.Tab.0.center" timestamp="1613042504243">
+    <state width="1237" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1400/3840.415.1920.1080@0.0.2560.1400" timestamp="1613925842995" />
+    <state width="1237" height="399" key="GridCell.Tab.0.center" timestamp="1613925842995">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1242" height="390" key="GridCell.Tab.0.center/-1920.418.1920.1140/3840.418.1920.1080/0.0.2560.1400@0.0.2560.1400" timestamp="1612530388068" />
-    <state width="1238" height="391" key="GridCell.Tab.0.center/0.0.2560.1400/3840.415.1920.1080@0.0.2560.1400" timestamp="1613042504243" />
-    <state width="1238" height="391" key="GridCell.Tab.0.left" timestamp="1613042504243">
+    <state width="1237" height="399" key="GridCell.Tab.0.center/0.0.2560.1400/3840.415.1920.1080@0.0.2560.1400" timestamp="1613925842995" />
+    <state width="1237" height="399" key="GridCell.Tab.0.left" timestamp="1613925842994">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1242" height="390" key="GridCell.Tab.0.left/-1920.418.1920.1140/3840.418.1920.1080/0.0.2560.1400@0.0.2560.1400" timestamp="1612530388068" />
-    <state width="1238" height="391" key="GridCell.Tab.0.left/0.0.2560.1400/3840.415.1920.1080@0.0.2560.1400" timestamp="1613042504243" />
-    <state width="1238" height="391" key="GridCell.Tab.0.right" timestamp="1613042504243">
+    <state width="1237" height="399" key="GridCell.Tab.0.left/0.0.2560.1400/3840.415.1920.1080@0.0.2560.1400" timestamp="1613925842994" />
+    <state width="1237" height="399" key="GridCell.Tab.0.right" timestamp="1613925842995">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1242" height="390" key="GridCell.Tab.0.right/-1920.418.1920.1140/3840.418.1920.1080/0.0.2560.1400@0.0.2560.1400" timestamp="1612530388068" />
-    <state width="1238" height="391" key="GridCell.Tab.0.right/0.0.2560.1400/3840.415.1920.1080@0.0.2560.1400" timestamp="1613042504243" />
+    <state width="1237" height="399" key="GridCell.Tab.0.right/0.0.2560.1400/3840.415.1920.1080@0.0.2560.1400" timestamp="1613925842995" />
   </component>
 </project>

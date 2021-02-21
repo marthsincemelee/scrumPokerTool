@@ -5,15 +5,9 @@
   height: 5vh;
   text-align: center;
 }
-.container {
-  margin-top: 10vh;
-}
+
 
 img{
-  max-width: 75%;
+  max-width: 50%;
 }
-.control-panel {
-  margin-top: 5vh;
-  display: flex;
-  justify-content: space-evenly;
-}
+

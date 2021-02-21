@@ -1,3 +1,8 @@
 nz-content {
   height: 92vh;
 }
+.control-panel {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-evenly;
+}

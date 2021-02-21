@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
     socket.on('vote', (userInfo) => {
         // console.log(userInfo);
         updateVote(userInfo);
-        socket.emit('allVotes', allVotes);
+        // socket.emit('allVotes', allVotes);
         console.log(allVotes);
         refreshVotes();
     });
@@ -40,6 +40,17 @@ io.on('connection', (socket) => {
          playerSocket.emit('showCards');
        });
     });
+
+    socket.on('resetVotes', () => {
+        console.log('resetting all Votes');
+        allVotes.forEach( entry => {
+            entry.voteValue = 0;
+        })
+        refreshVotes();
+        allSockets.forEach(playerSocket => {
+            playerSocket.emit('hideCards');
+        });
+    })
 
 
 });
