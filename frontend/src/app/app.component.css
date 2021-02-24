@@ -6,3 +6,6 @@ nz-content {
   display: flex;
   justify-content: space-evenly;
 }
+.container {
+    margin-top: 5vh;
+}
