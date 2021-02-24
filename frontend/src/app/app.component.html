@@ -12,7 +12,7 @@
       </div>
       <div nz-row class="control-panel">
         <button nz-button nzType="primary" (click)="playerService.resetVotes()">Neu Abstimmen</button>
-        <button nz-button nzType="danger" (click)="playerService.showCards()"> Flip Cards</button>
+        <button nz-button nzType="danger"  [disabled]="this.playerService.cardValueIsShown" (click)="playerService.showCards()"> Flip Cards</button>
         <button nz-button nzType="danger" (click)="playerService.resetGame()">Spiel zurücksetzen</button>
       </div>
 

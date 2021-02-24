@@ -11,10 +11,12 @@ export class PlayerService {
   cardValueIsShown: boolean;
   results: any;
   possibleValues: Array<number>;
+  currentSelfValue: number;
 
   constructor(private socket: Socket, private message: NzMessageService) {
     this.results = [];
     this.possibleValues = [1, 2, 3, 5, 8, 13];
+    this.currentSelfValue = 0;
 
     this.socket.on('allVotes', (allVotes) => {
       this.allPlayers = allVotes;
@@ -39,8 +41,12 @@ export class PlayerService {
         name: this.username,
         voteValue: value,
       });
+      this.currentSelfValue = value;
 
-      this.message.success('Vote submitted');
+      if(value !== 0){
+        this.message.success('Vote submitted');
+      }
+
     }else {
         this.message.error('Could not send vote since the current round is completed!');
     }
