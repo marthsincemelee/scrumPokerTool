@@ -58,10 +58,12 @@ export class PlayerService {
 
   resetGame(): void {
     this.socket.emit('reset');
+    this.currentSelfValue = 0; 
   }
 
   resetVotes(): void {
     this.socket.emit('resetVotes');
+    this.currentSelfValue = 0;
   }
 
   resetResults(): void {
