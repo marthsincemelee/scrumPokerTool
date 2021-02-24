@@ -15,7 +15,7 @@ export class PlayerService {
 
   constructor(private socket: Socket, private message: NzMessageService) {
     this.results = [];
-    this.possibleValues = [1, 2, 3, 5, 8, 13];
+    this.possibleValues = [1, 2, 3, 5, 8, 13, 21];
     this.currentSelfValue = 0;
 
     this.socket.on('allVotes', (allVotes) => {
