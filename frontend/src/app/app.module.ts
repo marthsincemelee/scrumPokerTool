@@ -27,6 +27,7 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { ResultComponent } from './pages/result/result.component';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 
 
 
@@ -53,6 +54,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
     NgbModule,
     NzInputModule,
     NzCardModule,
+    NzMessageModule,
     NzListModule,
     NzIconModule,
     NzLayoutModule,
