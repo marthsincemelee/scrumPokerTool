@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  backendURL: 'http://smoothcloud.de:9001'
 };

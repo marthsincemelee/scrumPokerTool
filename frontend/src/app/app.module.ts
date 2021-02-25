@@ -28,11 +28,12 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { ResultComponent } from './pages/result/result.component';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { NzMessageModule } from 'ng-zorro-antd/message';
+import {environment} from '../environments/environment';
 
 
 
 registerLocaleData(de);
-const config: SocketIoConfig = { url: 'http://localhost:3000', options: {
+const config: SocketIoConfig = { url: environment.backendURL, options: {
   cors: {origin: true}
 } };
 
