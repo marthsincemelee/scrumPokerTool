@@ -5,7 +5,19 @@
   </nz-header>
   <nz-content>
     <app-set-username-modal></app-set-username-modal>
-    <div
+    <div class="container-fluid">
+      <div nz-row style="margin-top: 5vh">
+        <div nz-col nzXs="24" nzSm="24" nzMd="14">
+          <app-vote-selection></app-vote-selection>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzMd="10">
+          <app-current-player-tag></app-current-player-tag>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <div
      class="container-fluid">
       <div nz-row class="container">
         <app-vote-selection></app-vote-selection>
@@ -19,7 +31,6 @@
       <div nz-row class="control-panel">
         <button nz-button nzType="danger" (click)="playerService.resetGame()">Spiel zurücksetzen</button>
       </div>
-
       <div nz-row style="margin-top: 10vh">
         <div nz-col nzXs="24" nzSm="24" nzMd="12">
           <app-vote-view></app-vote-view>
@@ -39,6 +50,8 @@
           <app-result *ngIf="playerService.cardValueIsShown"></app-result>
         </div>
       </div>
-    </div>
+    </div> -->
+
+
   </nz-content>
 </nz-layout>
