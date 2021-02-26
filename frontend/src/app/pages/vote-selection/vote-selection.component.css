@@ -1,9 +1,10 @@
 img {
-  max-width: 80%;
+  max-width: 100%;
+  align-self: center;
 }
 
 img:hover {
-  transform: scale(1.1);
+  transform: scale(1.01);
 }
 .container-fluid {
   margin-top: 5vh;

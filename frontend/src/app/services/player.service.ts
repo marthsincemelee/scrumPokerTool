@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Socket } from '@hochdreih/ngx-socket-io-3';
-import { NzMessageService } from 'ng-zorro-antd/message';
+import {Injectable} from '@angular/core';
+import {Socket} from '@hochdreih/ngx-socket-io-3';
+import {NzMessageService} from 'ng-zorro-antd/message';
 
 @Injectable({
   providedIn: 'root',
@@ -43,12 +43,12 @@ export class PlayerService {
       });
       this.currentSelfValue = value;
 
-      if(value !== 0){
+      if (value !== 0) {
         this.message.success('Vote submitted');
       }
 
-    }else {
-        this.message.error('Could not send vote since the current round is completed!');
+    } else {
+      this.message.error('Could not send vote since the current round is completed!');
     }
   }
 
@@ -58,7 +58,7 @@ export class PlayerService {
 
   resetGame(): void {
     this.socket.emit('reset');
-    this.currentSelfValue = 0; 
+    this.currentSelfValue = 0;
   }
 
   resetVotes(): void {
@@ -70,8 +70,8 @@ export class PlayerService {
     this.results = [];
     this.possibleValues.forEach((value) => {
       const entry = {
-        option: value,
-        count: 0,
+        name: value,
+        value: 0,
       };
       this.results.push(entry);
     });
@@ -80,8 +80,8 @@ export class PlayerService {
   evaluateResults(): void {
     this.allPlayers.forEach((player) => {
       this.results.forEach((entry) => {
-        if (player.voteValue === entry.option) {
-          entry.count++;
+        if (player.voteValue === entry.name) {
+          entry.value++;
         }
       });
     });

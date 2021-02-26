@@ -1,4 +1,18 @@
-<div>
-  <span>Bereits abgestimmt haben: </span>
-  <nz-tag *ngFor="let player of playerService.allPlayers" [nzColor]="'geekblue'">{{player.name}}</nz-tag>
-</div>
+<nz-card style="width:100%" nzHoverable nzTitle="Abstimmungsstatus" [nzExtra]="extraTemplate">
+  <nz-list nzBordered nzHeader="Entwickler" *ngIf="playerService.allPlayers">
+    <nz-list-item *ngFor="let player of this.playerService.allPlayers">
+      {{ player.name }}
+      <nz-tag *ngIf="player.voteValue == 0" [nzColor]="'red'">Noch nicht abgestimmt</nz-tag>
+      <nz-tag *ngIf="player.voteValue != 0" [nzColor]="'green'">Abgestimmt</nz-tag>
+    </nz-list-item>
+  </nz-list>
+  <div style="margin-top: 2vh;">
+    <button nz-button nzType="primary" (click)="playerService.resetVotes()">Neu Abstimmen</button>
+    <button nz-button nzType="danger" [disabled]="this.playerService.cardValueIsShown"
+            (click)="playerService.showCards()"> Flip Cards
+    </button>
+    <button nz-button nzType="danger" (click)="playerService.resetGame()">Spiel zurücksetzen</button>
+  </div>
+</nz-card>
+<ng-template #extraTemplate>
+</ng-template>

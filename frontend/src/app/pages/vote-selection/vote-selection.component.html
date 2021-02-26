@@ -1,8 +1,8 @@
 <div nz-row [nzGutter]="[8, 8]" nzJustify="space-around" class="container-fluid">
-  <div nz-col nzXs="8"  nzSm="8" nzMd="3" *ngFor="let option of options">
-    <img [src]="option.picUrl" 
-    (click)="playerService.sendVote(option.value)" 
-    [alt]="option.value" 
+  <div nz-col nzXs="8"  nzSm="8" nzMd="6" *ngFor="let option of options">
+    <img [src]="option.picUrl"
+    (click)="playerService.sendVote(option.value)"
+    [alt]="option.value"
     [ngStyle]="{'border': option.value === this.playerService.currentSelfValue ? 'solid red 5px': 'none'}">
   </div>
 </div>
