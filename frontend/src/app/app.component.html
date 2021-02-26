@@ -7,51 +7,16 @@
     <app-set-username-modal></app-set-username-modal>
     <div class="container-fluid">
       <div nz-row style="margin-top: 5vh">
-        <div nz-col nzXs="24" nzSm="24" nzMd="14">
+        <div nz-col nzXs="24" nzSm="24" nzMd="14" *ngIf="!playerService.cardValueIsShown">
           <app-vote-selection></app-vote-selection>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzMd="14" *ngIf="playerService.cardValueIsShown">
+          <app-result></app-result>
         </div>
         <div nz-col nzXs="24" nzSm="24" nzMd="10">
           <app-current-player-tag></app-current-player-tag>
         </div>
       </div>
     </div>
-
-
-    <!-- <div
-     class="container-fluid">
-      <div nz-row class="container">
-        <app-vote-selection></app-vote-selection>
-      </div>
-      <div nz-row class="control-panel">
-        <button nz-button nzType="primary" (click)="playerService.resetVotes()">Neu Abstimmen</button>
-      </div>
-      <div nz-row class="control-panel">
-        <button nz-button nzType="danger"  [disabled]="this.playerService.cardValueIsShown" (click)="playerService.showCards()"> Flip Cards</button>
-      </div>
-      <div nz-row class="control-panel">
-        <button nz-button nzType="danger" (click)="playerService.resetGame()">Spiel zurücksetzen</button>
-      </div>
-      <div nz-row style="margin-top: 10vh">
-        <div nz-col nzXs="24" nzSm="24" nzMd="12">
-          <app-vote-view></app-vote-view>
-        </div>
-        <div nz-col nzXs="24" nzSm="24" nzMd="12">
-          <nz-list nzBordered nzHeader="Entwickler" *ngIf="playerService.allPlayers">
-            <nz-list-item *ngFor="let player of this.playerService.allPlayers">
-              {{ player.name }}
-              <nz-tag *ngIf="player.voteValue == 0" [nzColor]="'red'">Noch nicht abgestimmt</nz-tag>
-              <nz-tag *ngIf="player.voteValue != 0" [nzColor]="'green'">Abgestimmt</nz-tag>
-            </nz-list-item>
-          </nz-list>
-        </div>
-      </div>
-      <div nz-row>
-        <div nz-col nzSpan="24">
-          <app-result *ngIf="playerService.cardValueIsShown"></app-result>
-        </div>
-      </div>
-    </div> -->
-
-
   </nz-content>
 </nz-layout>

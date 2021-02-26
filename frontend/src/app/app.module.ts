@@ -29,6 +29,7 @@ import { ResultComponent } from './pages/result/result.component';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import {environment} from '../environments/environment';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 
 
@@ -65,7 +66,8 @@ const config: SocketIoConfig = { url: environment.backendURL, options: {
     NzGridModule,
     NzButtonModule,
     NzFormModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxChartsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: de_DE }],
   bootstrap: [AppComponent]

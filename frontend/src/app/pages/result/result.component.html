@@ -1,16 +1,20 @@
-<div class="container">
-  <div nz-row [nzGutter]="[16, 24]">
-    <div nz-col nzXs="12" nzSm="12" nzMd="4"   *ngFor="let result of playerService.results">
-      <nz-card *ngIf="result.count != 0">
-        <nz-statistic
-          [nzValue]="result.count"
-          [nzTitle]="'Auswertung für: ' + result.option.toString()"
-          [nzValueStyle]="{ color: '#3F8600' }"
-        >
-        </nz-statistic>
-        <!-- <ng-template #prefixTplOne><i nz-icon nzType="arrow-up"></i></ng-template> -->
-      </nz-card>
-    </div>
-  </div>
 
-</div>
+<nz-card nzHoverable style="width: 100%;" nzTitle="Results" [nzExtra]="extraTemplate">
+
+  <ngx-charts-pie-chart
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="this.playerService.results"
+    [gradient]="gradient"
+    [legend]="showLegend"
+    [legendPosition]="legendPosition"
+    [labels]="showLabels"
+    [doughnut]="isDoughnut"
+  >
+  </ngx-charts-pie-chart>
+
+
+</nz-card>
+<ng-template #extraTemplate>
+  <a>More</a>
+</ng-template>
