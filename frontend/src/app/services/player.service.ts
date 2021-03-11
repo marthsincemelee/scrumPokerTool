@@ -1,11 +1,14 @@
 import {Injectable} from '@angular/core';
-import {Socket} from '@hochdreih/ngx-socket-io-3';
+import {Socket, SocketIoConfig} from '@hochdreih/ngx-socket-io-3';
 import {NzMessageService} from 'ng-zorro-antd/message';
+import {environment} from '../../environments/environment';
+import {Player} from '../../model/Player';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PlayerService {
+  player: Player;
   username: string;
   allPlayers: Array<any>;
   cardValueIsShown: boolean;
@@ -13,10 +16,14 @@ export class PlayerService {
   possibleValues: Array<number>;
   currentSelfValue: number;
 
+
   constructor(private socket: Socket, private message: NzMessageService) {
+
     this.results = [];
     this.possibleValues = [1, 2, 3, 5, 8, 13, 21];
     this.currentSelfValue = 0;
+    this.allPlayers = [];
+
 
     this.socket.on('allVotes', (allVotes) => {
       this.allPlayers = allVotes;
@@ -32,7 +39,15 @@ export class PlayerService {
       this.cardValueIsShown = false;
     });
 
+    this.socket.on('id', (res) => {
+      this.player = new Player(res.id, res.name, 0 , false);
+    });
+
     this.cardValueIsShown = false;
+  }
+
+  requestNewPlayer(): void {
+    this.socket.emit('requestNewPlayer', {name: this.username});
   }
 
   sendVote(value: number): void {
@@ -75,6 +90,10 @@ export class PlayerService {
       };
       this.results.push(entry);
     });
+  }
+
+  getAllPlayer(): void {
+    this.socket.emit('getAllVotes');
   }
 
   evaluateResults(): void {

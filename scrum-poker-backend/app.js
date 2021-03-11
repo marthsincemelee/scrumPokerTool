@@ -16,7 +16,6 @@ let allSockets = [];
 io.on('connection', (socket) => {
     allSockets.push(socket);
     console.log('User connected to the socket.');
-
     //when the socket recieves a new vote
     socket.on('vote', (userInfo) => {
         // console.log(userInfo);
@@ -24,6 +23,10 @@ io.on('connection', (socket) => {
         // socket.emit('allVotes', allVotes);
         console.log(allVotes);
         refreshVotes();
+    });
+
+    socket.on('getAllVotes', () => {
+       refreshVotes();
     });
 
     socket.on('reset', () => {
@@ -52,9 +55,22 @@ io.on('connection', (socket) => {
         });
     })
 
+    socket.on('requestNewPlayer', (req) => {
+        const generatedId = generateId();
+        socket.emit('id', {
+            name: req.name,
+            id: generatedId
+        });
+    });
+
 
 });
 
+/**
+ * @Deprecated
+ * @param username
+ * @return {boolean}
+ */
 function checkIfUserAlreadyExists(username) {
     let result = false;
     allVotes.forEach(userInfo => {
@@ -84,6 +100,10 @@ function refreshVotes() {
     allSockets.forEach(playerSocket => {
         playerSocket.emit('allVotes', allVotes);
     })
+}
+
+function generateId() {
+
 }
 
 
