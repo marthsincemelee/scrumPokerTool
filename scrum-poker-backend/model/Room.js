@@ -5,7 +5,7 @@ class Room {
         this.id = uuidv4();
         this.name = name;
         this.sockets = [];
-        this.votes = [];
+        this.users = [];
     }
 
 
