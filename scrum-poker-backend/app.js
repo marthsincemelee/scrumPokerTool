@@ -1,3 +1,5 @@
+import {Room} from "./model/Room";
+
 const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http, {
@@ -8,7 +10,7 @@ const io = require('socket.io')(http, {
         },
 
 });
-
+let allRooms = [];
 let allVotes = [];
 let allSockets = [];
 
@@ -16,6 +18,11 @@ let allSockets = [];
 io.on('connection', (socket) => {
     allSockets.push(socket);
     console.log('User connected to the socket.');
+
+    socket.on('', (clientInfo) => {
+        let room = allRooms.find(room => room.id === clientInfo.roomId);
+
+    });
 
     //when the socket recieves a new vote
     socket.on('vote', (userInfo) => {
@@ -30,20 +37,20 @@ io.on('connection', (socket) => {
         allVotes = [];
         refreshVotes();
         allSockets.forEach(playerSocket => {
-           playerSocket.emit('hideCards');
+            playerSocket.emit('hideCards');
         });
 
     });
 
     socket.on('showCards', () => {
-       allSockets.forEach(playerSocket => {
-         playerSocket.emit('showCards');
-       });
+        allSockets.forEach(playerSocket => {
+            playerSocket.emit('showCards');
+        });
     });
 
     socket.on('resetVotes', () => {
         console.log('resetting all Votes');
-        allVotes.forEach( entry => {
+        allVotes.forEach(entry => {
             entry.voteValue = 0;
         })
         refreshVotes();
@@ -64,6 +71,26 @@ function checkIfUserAlreadyExists(username) {
     });
     return result;
 }
+
+
+app.post('/createRoom', (req, res) => {
+    const room = new Room(req.body.roomname);
+    const user = new User(req.body.username);
+    room.users.push(user);
+    allRooms.push(room);
+    const response = {
+        id: room.id,
+        username: user.username,
+        roomname: room.name
+    }
+    res.send(response);
+});
+
+app.post('/user', ((req, res) => {
+            const user = new User(req.body.username);
+        }
+    )
+);
 
 function updateVote(userInfo) {
 
